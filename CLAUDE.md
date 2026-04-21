@@ -1,0 +1,1 @@
+/Users/ammarilyas/Desktop/baketivity shopify site /baketivity-theme/AGENTS.md
