@@ -1,0 +1,96 @@
+{{ 'section-made-child.css' | asset_url | stylesheet_tag }}
+
+<section class="bkfk-made-child-block">
+  <div class="bkfk-container">
+    <div class="bkfk-row">
+      <div class="bkfk-col head">
+        <span class="bkfk-tag-label">{{ section.settings.tag_label }}</span>
+        <h2>{{ section.settings.heading }}</h2>
+        <p>{{ section.settings.description }}</p>
+      </div>
+    </div>
+    <div class="bkfk-row">
+      <div class="bkfk-col swiper bkfk-made-child-card-group-slider">
+        <div class="swiper-wrapper bkfk-made-child-card-group">
+          {% for block in section.blocks %}
+            <div class="swiper-slide bkfk-made-child-card" {{ block.shopify_attributes }}>
+              {% if block.settings.image != blank %}
+                {{ block.settings.image | image_url: width: 900 | image_tag: loading: 'lazy' }}
+              {% else %}
+                <img src="{{ 'card-1.png' | asset_url }}" alt="">
+              {% endif %}
+              <div class="bkfk-caption">
+                <h5>{{ block.settings.title }}</h5>
+                <p>{{ block.settings.description }}</p>
+              </div>
+            </div>
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+  {
+    "name": "Made child",
+    "settings": [
+      {
+        "type": "text",
+        "id": "tag_label",
+        "label": "Tag label",
+        "default": "Who This Is For"
+      }, {
+        "type": "text",
+        "id": "heading",
+        "label": "Heading",
+        "default": "Made for Your Child"
+      }, {
+        "type": "textarea",
+        "id": "description",
+        "label": "Description",
+        "default": "Thoughtfully designed to support a wide range of abilities, helping children grow with confidence, independence, and joy."
+      }
+    ],
+    "blocks": [
+      {
+        "type": "card",
+        "name": "Card",
+        "settings": [
+          {
+            "type": "image_picker",
+            "id": "image",
+            "label": "Card image"
+          }, {
+            "type": "text",
+            "id": "title",
+            "label": "Title",
+            "default": "Children with intellectual disabilities"
+          }, {
+            "type": "textarea",
+            "id": "description",
+            "label": "Description",
+            "default": "Programs designed to support a wide range of learning styles, abilities, and developmental needs."
+          }
+        ]
+      }
+    ],
+    "max_blocks": 12,
+    "presets": [
+      {
+        "name": "Made child",
+        "blocks": [
+          {
+            "type": "card"
+          }, {
+            "type": "card"
+          }, {
+            "type": "card"
+          }, {
+            "type": "card"
+          }
+        ]
+      }
+    ]
+  }
+{% endschema %}

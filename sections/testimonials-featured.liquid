@@ -1,0 +1,135 @@
+{{ 'section-testimonials.css' | asset_url | stylesheet_tag }}
+
+<section class="bkfk-parent-saying-slider-wrapper">
+  <h2>{{ section.settings.heading }}</h2>
+  <div class="bkfh-review-slider swiper">
+    <div class="swiper-wrapper">
+      {% for block in section.blocks %}
+        {% if block.type == 'testimonial' %}
+          <div class="bkfh-slide swiper-slide" {{ block.shopify_attributes }}>
+            <div class="bkfh-slide-img">
+              {% if block.settings.image != blank %}
+                {{ block.settings.image | image_url: width: 900 | image_tag: loading: 'lazy' }}
+              {% else %}
+                <img src="{{ 'slides-1.png' | asset_url }}" alt="">
+              {% endif %}
+            </div>
+            <div class="bkfh-slide-text">
+              <p>{{ block.settings.text }}</p>
+            </div>
+          </div>
+        {% endif %}
+      {% endfor %}
+    </div>
+  </div>
+  <div class="bkfk-featured-section">
+    <div class="bkfk-container">
+      <h4>{{ section.settings.featured_heading }}</h4>
+      <ul class="bkfk-featured-logo-wrapper">
+        {% assign logo_index = 0 %}
+        {% for block in section.blocks %}
+          {% if block.type == 'logo' %}
+            {% assign logo_index = logo_index | plus: 1 %}
+            {% assign fallback_logo = 'featured-logo-1.svg' %}
+            {% case logo_index %}
+              {% when 2 %}
+                {% assign fallback_logo = 'featured-logo-2.svg' %}
+              {% when 3 %}
+                {% assign fallback_logo = 'featured-logo-3.svg' %}
+              {% when 4 %}
+                {% assign fallback_logo = 'featured-logo-4.svg' %}
+              {% when 5 %}
+                {% assign fallback_logo = 'featured-logo-5.svg' %}
+            {% endcase %}
+            <li {{ block.shopify_attributes }}>
+              {% if block.settings.image != blank %}
+                {{ block.settings.image | image_url: width: 500 | image_tag: loading: 'lazy' }}
+              {% else %}
+                <img src="{{ fallback_logo | asset_url }}" alt="">
+              {% endif %}
+            </li>
+          {% endif %}
+        {% endfor %}
+      </ul>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+  {
+    "name": "Testimonials featured",
+    "settings": [
+      {
+        "type": "text",
+        "id": "heading",
+        "label": "Heading",
+        "default": "What Parents Are Saying"
+      }, {
+        "type": "text",
+        "id": "featured_heading",
+        "label": "Featured heading",
+        "default": "Featured in"
+      }
+    ],
+    "blocks": [
+      {
+        "type": "testimonial",
+        "name": "Testimonial",
+        "settings": [
+          {
+            "type": "image_picker",
+            "id": "image",
+            "label": "Image"
+          }, {
+            "type": "textarea",
+            "id": "text",
+            "label": "Quote",
+            "default": "My child felt so proud baking on their own for the first time."
+          }
+        ]
+      }, {
+        "type": "logo",
+        "name": "Logo",
+        "settings": [
+          {
+            "type": "image_picker",
+            "id": "image",
+            "label": "Logo image"
+          }
+        ]
+      }
+    ],
+    "max_blocks": 20,
+    "presets": [
+      {
+        "name": "Testimonials featured",
+        "blocks": [
+          {
+            "type": "testimonial"
+          },
+          {
+            "type": "testimonial"
+          },
+          {
+            "type": "testimonial"
+          },
+          {
+            "type": "testimonial"
+          }, {
+            "type": "testimonial"
+          }, {
+            "type": "logo"
+          }, {
+            "type": "logo"
+          }, {
+            "type": "logo"
+          }, {
+            "type": "logo"
+          }, {
+            "type": "logo"
+          }
+        ]
+      }
+    ]
+  }
+{% endschema %}

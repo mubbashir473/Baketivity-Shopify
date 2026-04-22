@@ -1,0 +1,163 @@
+/* Child Made Block */
+section.bkfk-made-child-block {
+    background: linear-gradient(180deg, rgba(247, 191, 101, 0) 37.59%, #F7BF65 98.9%);
+    padding: 113px 20px;
+}
+
+section.bkfk-made-child-block .bkfk-container {
+    max-width: 1660px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+section.bkfk-made-child-block .bkfk-container .bkfk-row {
+    display: flex;
+}
+
+section.bkfk-made-child-block .bkfk-container .bkfk-row .bkfk-col {
+    flex: 1;
+}
+
+section.bkfk-made-child-block .bkfk-container .bkfk-row .bkfk-col.head {
+    display: flex;
+    flex-flow: column;
+    text-align: center;
+    align-items: center;
+}
+
+section.bkfk-made-child-block .bkfk-container .bkfk-row .bkfk-col.head span.bkfk-tag-label {
+    background: var(--secondary-3);
+    padding: 12px 23px;
+    border-radius: 50px;
+    color: var(--white);
+    font-weight: 600;
+    font-size: var(--p-size);
+    line-height: 150%;
+    letter-spacing: 10%;
+    text-transform: uppercase;
+    font-family: var(--primary-semibold);
+    margin-bottom: 28px;
+}
+
+section.bkfk-made-child-block .bkfk-container .bkfk-row .bkfk-col.head h2 {
+    font-family: var(--primary-bold);
+    font-weight: 700;
+    font-size: var(--h2-size);
+    line-height: 100%;
+    text-align: center;
+    color: var(--text-color-2);
+}
+
+section.bkfk-made-child-block .bkfk-container .bkfk-row .bkfk-col.head p {
+    font-size: var(--h6-size);
+    line-height: 143%;
+    text-align: center;
+    color: var(--light-gray);
+    font-family: var(--primary-medium);
+    max-width: clamp(550px, 54vw, 908px);
+    margin: 27px 0 0 0;
+}
+@media all and (max-width: 1700px) {
+    section.bkfk-made-child-block .bkfk-container .bkfk-row .bkfk-col.head span.bkfk-tag-label {
+        transform: scale(.85);
+    }
+    section.bkfk-made-child-block .bkfk-container .bkfk-row .bkfk-col.head h2 {
+        font-size: 3vw;
+    }
+    section.bkfk-made-child-block .bkfk-container .bkfk-row .bkfk-col.head p {
+        font-size: 1.2vw;
+        max-width: 40vw;
+    }
+    section.bkfk-made-child-block .bkfk-container {
+        max-width: 1440px;
+    }
+}
+@media all and (min-width: 1025px) {
+    .bkfk-made-child-card-group {
+        display: grid !important;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 20px !important;
+        height: auto !important;
+        margin: 55px 0 80px 0;
+    }
+}
+
+.bkfk-made-child-card-group .bkfk-made-child-card {
+    background: var(--white);
+    box-shadow: 2px 8px 16px 0px #C2C6D00F;
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.bkfk-made-child-card-group .bkfk-made-child-card .bkfk-caption {
+    padding: 50px 0;
+    width: min(316px, 85%);
+    margin: 0 auto;
+    display: flex;
+    flex-flow: column;
+    gap: 12px;
+}
+
+.bkfk-made-child-card-group .bkfk-made-child-card .bkfk-caption h5 {
+    font-family: var(--primary-bold);
+    font-size: var(--h5-size);
+    line-height: 130%;
+    color: var(--text-color-3);
+}
+
+.bkfk-made-child-card-group .bkfk-made-child-card .bkfk-caption p {
+    font-family: var(--primary-medium);
+    font-size: var(--p-size);
+    line-height: 150%;
+    color: var(--light-gray);
+}
+
+.bkfk-made-child-card-group .bkfk-made-child-card img {
+    width: 100%;
+    aspect-ratio: 1.6;
+    object-fit: cover;
+    object-position: top;
+}
+
+@media all and (max-width: 1700px) {
+    .bkfk-made-child-card-group .bkfk-made-child-card .bkfk-caption {
+        padding: 30px 20px;
+        width: 100%;
+    }
+}
+
+@media all and (max-width: 1024px) {
+    section.bkfk-made-child-block .bkfk-container .bkfk-row .bkfk-col.head p {
+        margin-bottom: 30px;
+    }
+
+    .bkfk-made-child-card-group .bkfk-made-child-card {
+        width: 300px;
+    }
+
+    section.bkfk-made-child-block {
+        padding: 50px 0 120px;
+    }
+
+    section.bkfk-made-child-block+.bkfk-sep-shape.top {
+        margin-top: -5vw;
+    }
+
+    section.bkfk-made-child-block .bkfk-container .bkfk-row .bkfk-col.head {
+        padding: 0 20px;
+    }
+}
+
+@media all and (max-width: 640px) {
+    .bkfk-made-child-card-group .bkfk-made-child-card {
+        width: 250px;
+    }
+
+    section.bkfk-made-child-block .bkfk-container .bkfk-row .bkfk-col.head {
+        padding: 0 15px;
+    }
+
+    section.bkfk-made-child-block {
+        padding: 50px 0 80px;
+    }
+}

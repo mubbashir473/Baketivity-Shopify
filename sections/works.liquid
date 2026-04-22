@@ -1,0 +1,194 @@
+{{ 'section-works.css' | asset_url | stylesheet_tag }}
+
+<section class="bkfk-works-block">
+  <img
+    class="vector-2 parallax-item"
+    src="{{ 'cooking-cap.svg' | asset_url }}"
+    alt="">
+  <div class="bkfk-sep-shape"><img src="{{ 'top-border-2.svg' | asset_url }}" alt=""></div>
+  <div class="bkfk-container-fluid">
+    <img
+      class="vector-1"
+      src="{{ 'work-vector-1.svg' | asset_url }}"
+      alt="">
+    <div class="bkfk-row">
+      <div class="bkfk-col">
+        <div class="bkfk-why-work-block">
+          <div class="img-frame">
+            <img
+              class="frame-vector"
+              src="{{ 'img-frame-vector.svg' | asset_url }}"
+              alt="">
+            {% if section.settings.why_image != blank %}
+              {{ section.settings.why_image | image_url: width: 1800 | image_tag: loading: 'lazy' }}
+            {% else %}
+              <img src="{{ 'work-banner.png' | asset_url }}" alt="">
+            {% endif %}
+          </div>
+          <div class="bkfk-caption">
+            <h2>{{ section.settings.why_heading }}</h2>
+            <ul>
+              {% for block in section.blocks %}
+                {% if block.type == 'benefit' %}
+                  <li {{ block.shopify_attributes }}><img src="{{ 'check-sign.svg' | asset_url }}" alt="">{{ block.settings.text }}</li>
+                {% endif %}
+              {% endfor %}
+            </ul>
+            <img
+              class="coupon"
+              src="{{ 'coupon.svg' | asset_url }}"
+              alt="">
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="bkfk-row">
+      <div class="bkfk-col head">
+        <span class="bkfk-tag-label">{{ section.settings.get_started_tag }}</span>
+        <h2>{{ section.settings.get_started_heading }}</h2>
+        <p>{{ section.settings.get_started_description }}</p>
+      </div>
+    </div>
+    <div class="bkfk-row">
+      <div class="bkfk-col">
+        <div class="bkfk-get-started-block">
+          <img
+            class="steps-line"
+            src="{{ 'steps-line.svg' | asset_url }}"
+            alt="">
+          {% for block in section.blocks %}
+            {% if block.type == 'step' %}
+              {% assign fallback_step = 'step-1.png' %}
+              {% case forloop.index %}
+                {% when 2 %}
+                  {% assign fallback_step = 'step-2.png' %}
+                {% when 3 %}
+                  {% assign fallback_step = 'step-3.png' %}
+                {% when 4 %}
+                  {% assign fallback_step = 'step-4.png' %}
+              {% endcase %}
+              <div class="bkfk-get-started-card" {{ block.shopify_attributes }}>
+                <div class="bkfk-get-started-head">
+                  <span>{{ block.settings.step_label }}</span>
+                  <h5>{{ block.settings.title }}</h5>
+                </div>
+                <div class="bkfk-get-started-footer">
+                  {% if block.settings.image != blank %}
+                    {{ block.settings.image | image_url: width: 900 | image_tag: loading: 'lazy' }}
+                  {% else %}
+                    <img src="{{ fallback_step | asset_url }}" alt="">
+                  {% endif %}
+                </div>
+              </div>
+            {% endif %}
+          {% endfor %}
+          <img
+            class="steps-vector"
+            src="{{ 'step-vector.svg' | asset_url }}"
+            alt="">
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="bkfk-sep-shape bottom"><img src="{{ 'bottom-border-2.svg' | asset_url }}" alt=""></div>
+</section>
+
+{% schema %}
+  {
+    "name": "Works",
+    "settings": [
+      {
+        "type": "image_picker",
+        "id": "why_image",
+        "label": "Why it works image"
+      },
+      {
+        "type": "text",
+        "id": "why_heading",
+        "label": "Why it works heading",
+        "default": "Why It Works"
+      },
+      {
+        "type": "text",
+        "id": "get_started_tag",
+        "label": "Get started tag",
+        "default": "Get Started"
+      },
+      {
+        "type": "text",
+        "id": "get_started_heading",
+        "label": "Get started heading",
+        "default": "Simple Ways to Get Started"
+      }, {
+        "type": "textarea",
+        "id": "get_started_description",
+        "label": "Get started description",
+        "default": "Thoughtfully designed to support a wide range of abilities, helping children grow with confidence, independence, and joy."
+      }
+    ],
+    "blocks": [
+      {
+        "type": "benefit",
+        "name": "Benefit",
+        "settings": [
+          {
+            "type": "text",
+            "id": "text",
+            "label": "Benefit text",
+            "default": "Builds confidence through small wins"
+          }
+        ]
+      }, {
+        "type": "step",
+        "name": "Step",
+        "settings": [
+          {
+            "type": "text",
+            "id": "step_label",
+            "label": "Step label",
+            "default": "Step 01"
+          }, {
+            "type": "text",
+            "id": "title",
+            "label": "Step title",
+            "default": "Choose your program (subscription or kit)"
+          }, {
+            "type": "image_picker",
+            "id": "image",
+            "label": "Step image"
+          }
+        ]
+      }
+    ],
+    "max_blocks": 16,
+    "presets": [
+      {
+        "name": "Works",
+        "blocks": [
+          {
+            "type": "benefit"
+          },
+          {
+            "type": "benefit"
+          },
+          {
+            "type": "benefit"
+          },
+          {
+            "type": "benefit"
+          }, {
+            "type": "benefit"
+          }, {
+            "type": "step"
+          }, {
+            "type": "step"
+          }, {
+            "type": "step"
+          }, {
+            "type": "step"
+          }
+        ]
+      }
+    ]
+  }
+{% endschema %}

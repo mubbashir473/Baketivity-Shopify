@@ -1,0 +1,98 @@
+{{ 'section-footer-cta.css' | asset_url | stylesheet_tag }}
+
+<div class="bkfk-sep-shape-footer">
+  <img src="{{ 'top-border.svg' | asset_url }}" alt="">
+</div>
+<footer class="bkfk-footer">
+  <div class="bkfk-container">
+    <div class="bkfk-footer-caption">
+      <h2>{{ section.settings.heading }}</h2>
+      <p>{{ section.settings.description }}</p>
+      <a class="bkfk-btn" href="{{ section.settings.button_link | default: '#' }}">
+        {{ section.settings.button_label }}
+        <img src="{{ 'right-arrow-white.svg' | asset_url }}" alt="">
+      </a>
+      <div class="bkfk-get-in-touch">
+        <p>{{ section.settings.help_text }}</p>
+        <a class="email-address" href="{{ section.settings.email_link | default: '#' }}">
+          <img src="{{ 'email-icon.svg' | asset_url }}" alt="">
+          {{ section.settings.email_text }}
+        </a>
+      </div>
+    </div>
+    {% if section.settings.desktop_banner != blank %}
+      {{ section.settings.desktop_banner | image_url: width: 2200 | image_tag: class: 'bkfk-banner', loading: 'lazy' }}
+    {% else %}
+      <img
+        class="bkfk-banner"
+        src="{{ 'footer-banner.png' | asset_url }}"
+        alt="">
+    {% endif %}
+  </div>
+  {% if section.settings.mobile_banner != blank %}
+    {{ section.settings.mobile_banner | image_url: width: 1200 | image_tag: class: 'footer-mobile-banner', loading: 'lazy' }}
+  {% else %}
+    <img
+      class="footer-mobile-banner"
+      src="{{ 'footer-mobile-banner.png' | asset_url }}"
+      alt="">
+  {% endif %}
+</footer>
+
+{% schema %}
+  {
+    "name": "Footer CTA",
+    "settings": [
+      {
+        "type": "text",
+        "id": "heading",
+        "label": "Heading",
+        "default": "Start Building Confidence Today"
+      },
+      {
+        "type": "textarea",
+        "id": "description",
+        "label": "Description",
+        "default": "Give your child the confidence to create, learn, and succeed."
+      },
+      {
+        "type": "text",
+        "id": "button_label",
+        "label": "Button label",
+        "default": "Get Started Today"
+      },
+      {
+        "type": "url",
+        "id": "button_link",
+        "label": "Button link"
+      }, {
+        "type": "textarea",
+        "id": "help_text",
+        "label": "Help text",
+        "default": "Need more info? Feel free to reach out to our dedicated help team."
+      }, {
+        "type": "text",
+        "id": "email_text",
+        "label": "Email text",
+        "default": "learn@baketivity.com"
+      }, {
+        "type": "url",
+        "id": "email_link",
+        "label": "Email link"
+      }, {
+        "type": "image_picker",
+        "id": "desktop_banner",
+        "label": "Desktop banner image"
+      }, {
+        "type": "image_picker",
+        "id": "mobile_banner",
+        "label": "Mobile banner image"
+      }
+    ],
+    "presets": [
+      {
+        "name": "Footer CTA"
+      }
+    ]
+  }
+{% endschema %}

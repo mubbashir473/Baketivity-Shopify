@@ -1,0 +1,104 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Manrope:wght@200..800&display=swap');
+
+@font-face {
+    font-family: 'Brockmann Bold';
+    font-style: normal;
+    font-weight: normal;
+    src: local('Brockmann Bold'), url('brockmann-bold.ttf') format('woff');
+}
+
+@font-face {
+    font-family: 'Brockmann Semibold';
+    font-style: normal;
+    font-weight: normal;
+    src: local('Brockmann semibold'), url('brockmann-semibold.ttf') format('woff');
+}
+
+@font-face {
+    font-family: 'Brockmann Medium';
+    font-style: normal;
+    font-weight: normal;
+    src: local('Brockmann Medium'), url('brockmann-medium.ttf') format('woff');
+}
+
+@font-face {
+    font-family: 'Brockmann Regular';
+    font-style: normal;
+    font-weight: normal;
+    src: local('Brockmann Regular'), url('brockmann-regular.ttf') format('woff');
+}
+
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+:root {
+    /* Colors */
+    --primary: #FF2F3C;
+    --primary-2: #FF4F5A;
+    --primary-3: #FF606A;
+    --secondary: #02989D;
+    --secondary-2: #02989D;
+    --secondary-3: #3D999C;
+    --yellow-color: #F7C066;
+    --yellow-light: #FEE4BA;
+    --yellow-light-2: #FFF5E5;
+    --yellow-light-3: #FFEBCC;
+
+    --light-gray: #7F7F7F;
+    --light-green: #ACDAAF;
+    --white: #ffffff;
+    --black: #000000;
+    --dark: #1D1D1D;
+    --text-color: #322F2F;
+    --text-color-2: #262626;
+    --text-color-3: #2E363E;
+
+
+    /* Slides Colors */
+    --slide-color-1: #FFAF8F;
+    --slide-color-2: #FFE2C7;
+    --slide-color-3: #B8FFB4;
+    --slide-color-4: #D9D9FF;
+
+
+    /* Font Family */
+    --primary-bold: 'Brockmann Bold';
+    --primary-medium: 'Brockmann Medium';
+    --primary-regular: 'Brockmann Regular';
+    --primary-semibold: 'Brockmann Semibold';
+    --secondary-font: "Manrope", sans-serif;
+    --body-font: "Inter", sans-serif;
+
+    /* Heading Font Sizes */
+    --h1-size: clamp(40px, 6.5vw, 120px);
+    --h2-size: clamp(32px, 6vw, 72px);
+    --h3-size: clamp(28px, 5vw, 52px);
+    --h4-size: clamp(24px, 4vw, 48px);
+    --h5-size: clamp(18px, 1.6vw, 28px);
+    --h6-size: clamp(18px, 1.4vw, 24px);
+    --p-size: clamp(14px, 1.2vw, 20px);
+    --p2-size: clamp(20px, 1.8vw, 32px);
+}
+
+@media all and (max-width: 1700px) {
+    :root {
+        /* Heading Font Sizes */
+        --h1-size: clamp(40px, 6.5vw, 92px);
+        --h2-size: clamp(32px, 6vw, 62px);
+    }
+
+}
+
+@media all and (max-width: 640px) {
+    :root {
+        /* Heading Font Sizes */
+        --h1-size: 38px;
+        --h2-size: 30px;
+        --h4-size: 22px;
+        --p2-size: 16px;
+    }
+
+}

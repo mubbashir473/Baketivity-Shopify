@@ -1,0 +1,259 @@
+{{ 'section-offer.css' | asset_url | stylesheet_tag }}
+
+<div class="bkfk-sep-shape top">
+  <img src="{{ 'top-border.svg' | asset_url }}" alt="">
+</div>
+<section class="bkfk-offer-block">
+  <img
+    class="vector-1 parallax-item"
+    src="{{ 'offer-vector-1.svg' | asset_url }}"
+    alt="">
+  <img
+    class="vector-2 parallax-item"
+    src="{{ 'offer-vector-2.svg' | asset_url }}"
+    alt="">
+  <img
+    class="vector-3 parallax-item"
+    src="{{ 'offer-vector-3.svg' | asset_url }}"
+    alt="">
+  <img
+    class="vector-4 parallax-item"
+    src="{{ 'offer-kokies.png' | asset_url }}"
+    alt="">
+  <div class="bkfk-container">
+    <div class="bkfk-row">
+      <div class="bkfk-col head">
+        <span class="bkfk-tag-label">{{ section.settings.tag_label }}</span>
+        <h2>{{ section.settings.heading }}</h2>
+        <p>{{ section.settings.description }}</p>
+      </div>
+    </div>
+    <div class="bkfk-row">
+      <div class="bkfk-col">
+        <div class="bkfk-subscription-cooking">
+          <div class="img-frame">
+            {% if section.settings.first_card_image != blank %}
+              {{ section.settings.first_card_image | image_url: width: 1800 | image_tag: loading: 'lazy' }}
+            {% else %}
+              <img src="{{ 'sweet-boxes.png' | asset_url }}" alt="">
+            {% endif %}
+          </div>
+          <div class="bkfk-caption">
+            <h2>{{ section.settings.first_card_heading }}</h2>
+            <p>{{ section.settings.first_card_description }}</p>
+            <a class="bkfk-btn" href="{{ section.settings.first_card_button_link | default: '#' }}">
+              {{ section.settings.first_card_button_label }}
+              <img src="{{ 'right-arrow-white.svg' | asset_url }}" alt="">
+            </a>
+          </div>
+        </div>
+        <div class="bkfk-subscription-cooking">
+          <div class="swiper bkfk-swiper-slider">
+            <div class="swiper-wrapper">
+              {% for block in section.blocks %}
+                <div class="swiper-slide" {{ block.shopify_attributes }}>
+                  <div class="img-frame">
+                    {% if block.settings.image != blank %}
+                      {{ block.settings.image | image_url: width: 900 | image_tag: loading: 'lazy' }}
+                    {% else %}
+                      <img src="{{ 'product-1.png' | asset_url }}" alt="">
+                    {% endif %}
+                  </div>
+                  <div class="bkfk-caption">
+                    <h5>{{ block.settings.title }}</h5>
+                    <div class="caption-foot">
+                      <p>{{ block.settings.price_text }}</p>
+                      <a href="{{ block.settings.link | default: '#' }}"><img src="{{ 'plus-icon.svg' | asset_url }}" alt=""></a>
+                    </div>
+                  </div>
+                </div>
+              {% endfor %}
+            </div>
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
+          </div>
+          <div class="bkfk-caption">
+            <h2>{{ section.settings.slider_heading }}</h2>
+            <p>{{ section.settings.slider_description }}</p>
+            <a class="bkfk-btn" href="{{ section.settings.slider_button_link | default: '#' }}">
+              {{ section.settings.slider_button_label }}
+              <img src="{{ 'right-arrow-white.svg' | asset_url }}" alt="">
+            </a>
+          </div>
+        </div>
+        <div class="bkfk-subscription-cooking">
+          <div class="img-frame">
+            {% if section.settings.third_card_image != blank %}
+              {{ section.settings.third_card_image | image_url: width: 1800 | image_tag: loading: 'lazy' }}
+            {% else %}
+              <img src="{{ 'support-tools.png' | asset_url }}" alt="">
+            {% endif %}
+          </div>
+          <div class="bkfk-caption">
+            <h2>{{ section.settings.third_card_heading }}</h2>
+            <p>{{ section.settings.third_card_description }}</p>
+            <a class="bkfk-btn" href="{{ section.settings.third_card_button_link | default: '#' }}">
+              {{ section.settings.third_card_button_label }}
+              <img src="{{ 'right-arrow-white.svg' | asset_url }}" alt="">
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<div class="bkfk-sep-shape bottom">
+  <img src="{{ 'bottom-border.svg' | asset_url }}" alt="">
+</div>
+
+{% schema %}
+  {
+    "name": "Offer",
+    "settings": [
+      {
+        "type": "text",
+        "id": "tag_label",
+        "label": "Tag label",
+        "default": "What We Offer"
+      },
+      {
+        "type": "text",
+        "id": "heading",
+        "label": "Heading",
+        "default": "Simple Ways to Get Started"
+      },
+      {
+        "type": "textarea",
+        "id": "description",
+        "label": "Description",
+        "default": "Thoughtfully designed to support a wide range of abilities, helping children grow with confidence, independence, and joy."
+      },
+      {
+        "type": "header",
+        "content": "First card"
+      }, {
+        "type": "image_picker",
+        "id": "first_card_image",
+        "label": "Image"
+      }, {
+        "type": "text",
+        "id": "first_card_heading",
+        "label": "Heading",
+        "default": "Subscription Cooking Boxes"
+      }, {
+        "type": "textarea",
+        "id": "first_card_description",
+        "label": "Description",
+        "default": "Monthly guided cooking and baking experiences that build skills over time."
+      }, {
+        "type": "text",
+        "id": "first_card_button_label",
+        "label": "Button label",
+        "default": "Get Yours"
+      }, {
+        "type": "url",
+        "id": "first_card_button_link",
+        "label": "Button link"
+      }, {
+        "type": "header",
+        "content": "Product slider caption"
+      }, {
+        "type": "text",
+        "id": "slider_heading",
+        "label": "Heading",
+        "default": "Single Baking Kits"
+      }, {
+        "type": "textarea",
+        "id": "slider_description",
+        "label": "Description",
+        "default": "Perfect for trying it out or gifting fun, structured, and easy to follow."
+      }, {
+        "type": "text",
+        "id": "slider_button_label",
+        "label": "Button label",
+        "default": "Get Yours"
+      }, {
+        "type": "url",
+        "id": "slider_button_link",
+        "label": "Button link"
+      }, {
+        "type": "header",
+        "content": "Third card"
+      }, {
+        "type": "image_picker",
+        "id": "third_card_image",
+        "label": "Image"
+      }, {
+        "type": "text",
+        "id": "third_card_heading",
+        "label": "Heading",
+        "default": "Tools & Support"
+      }, {
+        "type": "textarea",
+        "id": "third_card_description",
+        "label": "Description",
+        "default": "Visual guides, step-by-step instructions, Live help with our chef and thoughtful design to support different learning needs."
+      }, {
+        "type": "text",
+        "id": "third_card_button_label",
+        "label": "Button label",
+        "default": "Get Yours"
+      }, {
+        "type": "url",
+        "id": "third_card_button_link",
+        "label": "Button link"
+      }
+    ],
+    "blocks": [
+      {
+        "type": "product_item",
+        "name": "Slider item",
+        "settings": [
+          {
+            "type": "image_picker",
+            "id": "image",
+            "label": "Product image"
+          }, {
+            "type": "text",
+            "id": "title",
+            "label": "Title",
+            "default": "Ginger House Baking Kit"
+          }, {
+            "type": "text",
+            "id": "price_text",
+            "label": "Price text",
+            "default": "$36.99"
+          }, {
+            "type": "url",
+            "id": "link",
+            "label": "Item link"
+          }
+        ]
+      }
+    ],
+    "max_blocks": 12,
+    "presets": [
+      {
+        "name": "Offer",
+        "blocks": [
+          {
+            "type": "product_item"
+          },
+          {
+            "type": "product_item"
+          },
+          {
+            "type": "product_item"
+          },
+          {
+            "type": "product_item"
+          }, {
+            "type": "product_item"
+          }, {
+            "type": "product_item"
+          }
+        ]
+      }
+    ]
+  }
+{% endschema %}

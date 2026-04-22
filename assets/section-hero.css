@@ -1,0 +1,373 @@
+/* HERO BLOCK */
+section.bkfk-hero-block {
+    background: linear-gradient(180deg,
+            var(--primary-3) 0%,
+            var(--primary) 100%);
+    padding: 10px;
+    width: 100%;
+    margin: 0 auto;
+    position: relative;
+}
+
+section.bkfk-hero-block .bkfk-container {
+    max-width: 1900px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+section.bkfk-hero-block .bkfk-container .bkfk-row {
+    display: flex;
+    gap: 50px;
+    padding-left: clamp(20px, 7vw, 111px);
+    position: relative;
+}
+
+section.bkfk-hero-block img.vector-1 {
+    max-width: clamp(100px, 15vw, 273px);
+    position: absolute;
+    right: -47px;
+    top: -44px;
+    pointer-events: none;
+}
+
+section.bkfk-hero-block img.vector-2 {
+    max-width: clamp(70px, 9vw, 164px);
+    position: absolute;
+    bottom: 62px;
+    left: 0;
+    pointer-events: none;
+}
+
+section.bkfk-hero-block .bkfk-container .bkfk-row .bkfk-col:first-child {
+    max-width: 42%;
+    padding-top: 113px;
+}
+
+section.bkfk-hero-block .bkfk-container .bkfk-row .bkfk-col {
+    flex: 1;
+    position: relative;
+    display: flex;
+    flex-flow: column;
+    align-items: start;
+}
+
+section.bkfk-hero-block .bkfk-container .bkfk-row .bkfk-col .img-frame {
+    height: 100%;
+}
+
+section.bkfk-hero-block .bkfk-container .bkfk-row .bkfk-col .img-frame img {
+    max-width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+section.bkfk-hero-block span.bkfk-tag-label {
+    background: var(--primary-3);
+    background-blend-mode: screen;
+    padding: 16px 33px;
+    display: inline-block;
+    border-radius: 100px;
+    color: var(--white);
+    font-family: var(--secondary-font);
+    font-weight: 700;
+    font-size: var(--p-size);
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    border: 1px solid #FFFFFF7D;
+    margin: 0 0 44px 9px;
+}
+
+section.bkfk-hero-block h1 {
+    font-weight: 700;
+    font-size: var(--h1-size);
+    line-height: 100%;
+    letter-spacing: -3.23px;
+    color: var(--white);
+    font-family: var(--primary-bold);
+}
+
+section.bkfk-hero-block p {
+    font-weight: 500;
+    font-size: var(--h5-size);
+    line-height: 140%;
+    color: var(--white);
+    font-family: var(--primary-medium);
+    max-width: clamp(320px, 35vw, 630px);
+    margin: 23px 0 0 9px;
+}
+
+.bkfk-hero-block .bkfk-btn {
+    margin:
+        clamp(50px, 8vw, 144px)
+        /* top */
+        0
+        /* right */
+        clamp(30px, 4vw, 56px)
+        /* bottom */
+        clamp(10px, 2vw, 11px);
+    /* left */
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.bkfk-hero-block .bkfk-btn label {
+    font-family: var(--secondary-font);
+    font-weight: 600;
+    font-size: var(--h6-size);
+    line-height: 143%;
+    color: var(--white);
+    max-width: 171px;
+}
+
+.bkfk-hero-block .bkfk-btn .btn {
+    background: var(--white);
+    border-radius: 100px;
+    box-shadow: 0px 4px 2.1px 0px var(--primary);
+    padding: clamp(14px, 4vw, 30px) clamp(20px, 6vw, 50px);
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    gap: 16px;
+    font-size: var(--h5-size);
+    line-height: 152%;
+    text-align: center;
+    color: var(--primary-2);
+    font-family: var(--primary-medium);
+    white-space: nowrap;
+}
+
+.bkfk-trusted {
+    display: flex;
+    flex-flow: column;
+    gap: 8px;
+    padding: 0 0 0 10px;
+}
+
+section.bkfk-hero-block .bkfk-trusted p {
+    margin: 0;
+    font-size: var(--h6-size);
+}
+
+.bkfk-trusted .logos {
+    background: #FFFFFF4D;
+    padding: 9px 20px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.bkfk-trusted .logos img:first-child {
+    width: clamp(80px, 10vw, 170px);
+}
+
+.bkfk-trusted .logos img:last-child {
+    width: clamp(120px, 15vw, 261px);
+}
+
+section.bkfk-hero-block img.kokies {
+    position: absolute;
+    bottom: -8px;
+    right: -315px;
+    width: clamp(200px, 27vw, 532px);
+}
+
+@media all and (max-width: 1700px) {
+    section.bkfk-hero-block .bkfk-container {
+        max-width: 1400px;
+        width: 100%;
+        margin: 0 auto;
+    }
+    .bkfk-hero-block .bkfk-btn {
+        margin-top: 3vw;
+        margin-bottom: 20px;
+    }
+
+    section.bkfk-hero-block .bkfk-container .bkfk-row .bkfk-col:first-child {
+        padding: 5vw 0;
+    }
+
+    section.bkfk-hero-block .bkfk-container .bkfk-row {
+        padding-left: 4vw;
+    }
+
+    section.bkfk-hero-block span.bkfk-tag-label {
+        margin: 0 0 2.3vw 0;
+        padding: 1vw 2vw;
+        font-size: 1vw;
+    }
+
+    section.bkfk-hero-block img.vector-2 {
+        max-width: 8vw;
+        bottom: 3vw;
+    }
+
+    section.bkfk-hero-block img.kokies {
+        position: absolute;
+        bottom: -10px;
+        right: -16vw;
+        width: 28vw;
+    }
+
+    .bkfk-hero-block .bkfk-btn .btn {
+        padding: 1.2vw 2.5vw;
+        font-size: 1.3vw;
+    }
+
+    .bkfk-hero-block .bkfk-btn .btn img {
+        width: 1.3vw;
+    }
+
+    section.bkfk-hero-block img.vector-1 {
+        right: -2vw;
+        top: -2vw;
+    }
+    section.bkfk-hero-block p {
+        font-size: 1.2vw;
+        max-width: 24vw;
+    }
+    .bkfk-hero-block .bkfk-btn label,
+    section.bkfk-hero-block .bkfk-trusted p {
+        font-size: 1.2vw;
+    }
+    .bkfk-trusted .logos img:first-child {
+        width: 90px;
+    }
+    .bkfk-trusted .logos img:last-child {
+        width: 160px;
+    }
+}
+
+@media all and (max-width: 1199px) {
+    section.bkfk-hero-block .bkfk-container .bkfk-row {
+        padding-left: 20px;
+    }
+
+    .bkfk-hero-block .bkfk-btn .btn {
+        padding: 1.5vw 3vw;
+    }
+
+    .bkfk-hero-block .bkfk-btn {
+        margin-top: 3vw;
+        margin-bottom: 20px;
+    }
+
+    section.bkfk-hero-block h1 {
+        letter-spacing: -1px;
+    }
+}
+
+@media all and (max-width: 940px) {
+    section.bkfk-hero-block .bkfk-container .bkfk-row {
+        flex-flow: column;
+    }
+
+    section.bkfk-hero-block .bkfk-container .bkfk-row .bkfk-col:first-child {
+        max-width: inherit;
+    }
+
+    section.bkfk-hero-block p {
+        max-width: 550px;
+        margin-left: 0;
+    }
+
+    section.bkfk-hero-block .bkfk-container .bkfk-row {
+        padding: 0 5px;
+    }
+
+    .bkfk-hero-block .bkfk-btn .btn {
+        padding: 2.5vw 5vw;
+    }
+
+    .bkfk-hero-block .bkfk-btn .btn img {
+        width: 22px;
+    }
+
+    .bkfk-hero-block .bkfk-btn {
+        margin-top: 30px;
+        margin-bottom: 20px;
+    }
+
+    section.bkfk-hero-block .bkfk-container .bkfk-row .bkfk-col:first-child {
+        padding: 40px 0 0 0;
+    }
+
+    section.bkfk-hero-block img.vector-2 {
+        max-width: 18vw;
+        bottom: 10vw;
+    }
+
+    section.bkfk-hero-block img.vector-1 {
+        right: 0;
+        top: -21px;
+    }
+
+    section.bkfk-hero-block img.kokies {
+        bottom: -90px;
+        right: -16vw;
+        width: 37vw;
+    }
+
+    section.bkfk-hero-block span.bkfk-tag-label {
+        margin: 0 0 15px 0;
+        padding: 10px 20px;
+    }
+
+    .bkfk-hero-block .bkfk-btn {
+        gap: 10px;
+        margin-left: 0;
+    }
+
+    .bkfk-trusted {
+        padding: 0;
+    }
+
+    section.bkfk-hero-block {
+        overflow: hidden;
+        border-radius: 0;
+    }
+}
+
+@media all and (max-width: 640px) {
+    .bkfk-hero-block .bkfk-btn .btn {
+        padding: 15px 27px;
+        gap: 10px;
+        font-size: 14px;
+    }
+
+    .bkfk-hero-block .bkfk-btn .btn img {
+        width: 14px;
+    }
+
+    .bkfk-trusted .logos img:last-child {
+        width: clamp(150px, 15vw, 261px);
+    }
+
+    .bkfk-trusted .logos img:first-child {
+        width: clamp(100px, 10vw, 170px);
+    }
+
+    section.bkfk-hero-block .bkfk-trusted p,
+    .bkfk-hero-block .bkfk-btn label {
+        font-size: 14px;
+    }
+
+    section.bkfk-hero-block .bkfk-container .bkfk-row {
+        gap: 25px;
+        padding: 0;
+    }
+
+    .bkfk-trusted .logos {
+        padding: 6px 12px;
+        border-radius: 8px;
+    }
+
+    .bkfk-trusted .logos img:first-child {
+        width: 70px;
+    }
+
+    .bkfk-trusted .logos img:last-child {
+        width: 124px;
+    }
+}
